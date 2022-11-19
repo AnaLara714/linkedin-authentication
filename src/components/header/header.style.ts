@@ -3,7 +3,7 @@ import { styled } from "@mui/system";
 import { Typography } from "@mui/material";
 
 export const HeaderDiv = styled('div')({
-  height: 82,
+  height: 78,
   display: "flex",
   flexDirection: "row",
   justifyContent: "flex-start",
