@@ -1,0 +1,1 @@
+export {LinkedinAuthenticationRoutes} from "./route";

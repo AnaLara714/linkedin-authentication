@@ -2,11 +2,17 @@ import React from "react";
 import { BoxLogin, ButtonLogin, ButtonOtherOptions, Description, ForgotPassaword, Form, Main, NewUser, OrText, OtherOptions, Title, TxtNewLinkedIn, TxtRegister } from "./login.style";
 import TextField from "@mui/material/TextField";
 import Divider from "@mui/material/Divider";
-import IconGoogle from "assets/icons/icon-google.svg"
-import IconGithub from "assets/icons/iconGithub.svg";
-export const Login: React.FC = () => {
-  const onRegisterButtonClick = () => {}
+import { useNavigate } from "react-router-dom";
+import { LinkedinAuthenticationRoutes } from "components/constants";
+import { SignInGoogle } from "components/buttonGoogle";
+import { SignInGithub } from "components/buttonGithub";
 
+export const Login: React.FC = () => {
+  const navigate = useNavigate();
+
+  const onRegisterButtonClick = () => 
+    navigate(LinkedinAuthenticationRoutes.register);
+  
   return(
     <Main>
       <BoxLogin>
@@ -27,14 +33,8 @@ export const Login: React.FC = () => {
           <OrText>ou</OrText>
           <Divider className="halfDivider"/> 
         </OtherOptions>
-        <ButtonOtherOptions>
-          <img src={IconGoogle} className="iconGoogle"/>
-          Entrar com o Google
-        </ButtonOtherOptions>
-        <ButtonOtherOptions>
-          <img src={IconGithub} className="iconGithub"/>
-          Entrar com o Github
-        </ButtonOtherOptions>
+        <SignInGoogle/>
+        <SignInGithub/>
         <NewUser>
           <TxtNewLinkedIn>Novo no LinkedIn?</TxtNewLinkedIn>
           <TxtRegister

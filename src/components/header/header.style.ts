@@ -10,5 +10,8 @@ export const HeaderDiv = styled('div')({
   alignItems: "center",
   "& .logo": {
     marginLeft: 35,
+    "@media (max-width: 800px)": {
+      marginTop: -20,
+    }
   }
 });
