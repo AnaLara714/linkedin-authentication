@@ -12,12 +12,12 @@ export const Footer: React.FC = () => {
         </Text>
       </a>
       <ul className="options">
-      <Text>Contrato do Usário</Text>
-      <Text>Política de Privacidade do LinkedIn</Text>
-      <Text>Diretrizes da comunidade</Text>
-      <Text>Política de cookies</Text>
-      <Text>Política de Direitos Autorais</Text>
-      <Text>Enviar Feedback</Text>
+        <Text>Contrato do Usário</Text>
+        <Text>Política de Privacidade do LinkedIn</Text>
+        <Text>Diretrizes da comunidade</Text>
+        <Text>Política de cookies</Text>
+        <Text>Política de Direitos Autorais</Text>
+        <Text>Enviar Feedback</Text>
       </ul>
     </FooterDiv>
   );

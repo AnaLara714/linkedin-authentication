@@ -11,21 +11,29 @@ export const Main = styled("div")({
   minHeight: "100%",
   marginTop: "-15px",
   backgroundImage: `url(${imgBackground})`,
+  "@media (max-width: 850px)": {
+    background: "#FFFFFF",
+  },
   "& .boxMainOut": {
     marginBottom: 20,
     marginTop: 20,
-    width: 430,
+    width: "40%",
     padding: 24,
     display: "flex",
     justifyContent: "center",
     flexWrap: "wrap",
     boxShadow: "0 4px 12px rgb(0 0 0 / 15%)",
-    "@media (max-width: 800px)": {
-      width: 400,
+    "@media (max-width: 950px)": {
+      width: "60%",
+    },
+    "@media (max-width: 850px)": {
+      width: "80%",
+      boxShadow: "none",
+      marginTop: -20,
     },
   },
   "& .boxMainInside": {
-    width: 400,
+    width: "100%",
   },
   "& .inputs": {
     marginBottom: 16,
@@ -37,6 +45,9 @@ export const Main = styled("div")({
       width: "45%",
     },
   },
+  // "& .terms": {
+  //   width: "100%",
+  // },
 });
 export const BoxLogin = styled("div")({
   borderRadius: 8,
@@ -62,18 +73,18 @@ export const ButtonLogin = styled("button")({
   padding: "0 24px",
   cursor: "pointer",
   borderRadius: "28px !important",
+  width: "100%",
   marginTop: 16,
   fontWeight: 600,
   fontSize: 16,
   height: 55,
-  width: 400,
 });
 export const OtherOptions = styled("div")({
   display: "flex",
   flexDirection: "row",
   alignItems: "center",
   justifyContent: "center",
-  marginTop: 12,
+  marginTop: 12,  
 });
 export const OrText = styled(Typography)({
   fontSize: 14,
@@ -94,6 +105,9 @@ export const TxtOldLinkedIn = styled(Typography)({
   fonteSize: 16,
   color: "#000000E6",
   cursor: "default",
+  "@media (max-width: 450px)": {
+    fontSize: 14, 
+  },
 });
 export const TxtLogin = styled(Typography)({
   fonteSize: 16,
@@ -101,21 +115,40 @@ export const TxtLogin = styled(Typography)({
   color: "#0a66c2",
   padding: "0 8px",
   cursor: "pointer",
+  "@media (max-width: 450px)": {
+    fontSize: 14, 
+  },
+});
+
+export const InLine = styled("div")({
+  display: "flex",
+  justifyContent: "center",
+  width: "100%",
+  color: "rgba(0,0,0,0.6)",
+  fontSize: 12,
+  fontWeight: 400,
+  "@media (max-width: 450px)": {
+    alignItems: "center",
+    flexDirection: "row",
+    flexWrap: "wrap",     
+    // flexBasis: "100%",
+  },
 });
 export const TxtTerms = styled(Typography)({
+  alignItems: "center",
   display: "flex",
   flexDirection: "row",
   justifyContent: "center",
-  color: "rgba(0,0,0,0.6)",
-  fontSize: 13,
-  fontWeight: 400,
 });
 export const BlueWords =  styled(Typography)({
   marginLeft: 3,
   marginRight: 3,
   fontWeight: 600,
   fontSize: 12,
-  display: "flex",
-  flexDirection: "row",
+  "@media (max-width: 450px)": {
+    display: "flex",
+      flexWrap: "wrap",   
+  },
+  // flexDirection: "row",
   color: "#0a66c2",
 });

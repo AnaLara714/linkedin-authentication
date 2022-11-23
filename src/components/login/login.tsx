@@ -21,8 +21,12 @@ export const Login: React.FC = () => {
           Acompanhe as novidades do seu mundo profissional
         </Description>
         <Form>
-          <TextField className="inputEmail" label="E-mail ou telefone"/>
-          <TextField type="password" className="inputPassword" label="Senha"/>
+          <TextField required className="inputEmail" label="E-mail ou telefone"/>
+          <TextField 
+            required 
+            type="password" 
+            className="inputPassword" 
+            label="Senha"/>
           <ForgotPassaword>
             Esqueceu a senha?
           </ForgotPassaword>

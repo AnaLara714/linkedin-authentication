@@ -9,6 +9,7 @@ export const FooterDiv = styled('div')({
   alignItems: "center",
   flexWrap: "wrap",
   "& .options": {
+    padding: 10,
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "center",

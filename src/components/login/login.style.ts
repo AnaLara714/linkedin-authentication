@@ -11,33 +11,36 @@ export const Main = styled("div")({
   minHeight: "100%",
   marginTop: "-15px",
   backgroundImage: `url(${imgBackground})`,
-  "@media (max-width: 800px)": {
+  "@media (max-width: 450px)": {
     marginTop: "-25px",
+    background: "#FFFFFF",
   },
   "& .inputEmail": {
-    width: 300,
+    width: "100%",
   },
   "& .inputPassword": {
     marginTop: 24,
-    width: 300,
+    width: "100%",
   },
   "& .halfDivider": {
     width: "40%",
-    "@media (max-width: 800px)": {
-      width: "50%",
+    "@media (max-width: 350px)": {
+      width: "45%",
     },
   },
 });
 export const BoxLogin = styled("div")({
-  width: 300,
+  width: "25%",
   marginBottom: 20,
   marginTop: 20,
   padding: 24,
   borderRadius: 8,
   boxShadow: "0 4px 12px rgb(0 0 0 / 15%)",
   backgroundColor: "#FFFFFF",
-  "@media (max-width: 800px)": {
+  "@media (max-width: 450px)": {
     boxShadow: "none",
+    width: "80%",
+    background: "#FFFFFF",
   },
 });
 export const Title = styled(Typography)({
@@ -50,7 +53,7 @@ export const Title = styled(Typography)({
 });
 export const Description = styled(Typography)({
   fontSize: 14,
-  width: 300,
+  width: "80%",
   fontWeight: 400,
   paddingBottom: 4,
   cursor: "default",
@@ -79,7 +82,7 @@ export const ButtonLogin = styled("button")({
   fontWeight: 600,
   fontSize: 16,
   height: 55,
-  width: 300,
+  width: "100%",
 });
 export const OtherOptions = styled("div")({
   display: "flex",
@@ -88,7 +91,7 @@ export const OtherOptions = styled("div")({
   justifyContent: "center",
   marginTop: 12,
   "@media (max-width: 900px)": {
-    marginLeft: 30,
+    marginLeft: 10,
   },
 });
 export const OrText = styled(Typography)({
@@ -123,9 +126,6 @@ export const NewUser = styled("div")({
   justifyContent: "center",
   alignItems: "center",
   marginTop: 15,
-  "@media (max-width: 800px)": {
-    marginTop: "0px",
-  },
 });
 export const TxtNewLinkedIn = styled(Typography)({
   fonteSize: 16,
