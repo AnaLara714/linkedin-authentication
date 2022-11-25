@@ -21,5 +21,6 @@ export const ButtonOtherOptions = styled("button")({
     width: 25,
     hight: 25,
     marginRight: 5,
+    marginBottom: "2px",
   },
 });

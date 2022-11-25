@@ -17,10 +17,10 @@ export const ButtonOtherOptions = styled("button")({
   height: 43,
   width: "100%",
   marginTop: 12,
-  "& .iconGithub": {
+  "& .iconApple": {
     width: 20,
     hight: 20,
     marginRight: 5,
-    marginBottom: "-3px",
+    marginBottom: "-2px",
   },
 });
