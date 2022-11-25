@@ -34,7 +34,6 @@ export const Register: React.FC = () => {
       setButton(false);
   };
  
-
   return (
     <Main>
       <BoxLogin className="boxMainOut">
@@ -64,6 +63,7 @@ export const Register: React.FC = () => {
               onChange={onPasswordInputChange}
             />
             <TextField 
+              required={true}
               type="password" 
               className="inputs" 
               label="Confirmar senha"
