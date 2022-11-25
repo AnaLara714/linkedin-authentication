@@ -45,9 +45,6 @@ export const Main = styled("div")({
       width: "45%",
     },
   },
-  // "& .terms": {
-  //   width: "100%",
-  // },
 });
 export const BoxLogin = styled("div")({
   borderRadius: 8,

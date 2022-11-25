@@ -11,12 +11,15 @@ export const Register: React.FC = () => {
   const navigate = useNavigate();
   const [button, setButton] = React.useState(true);
   const [newPassword, setNewPassword] = React.useState("");
+  const [validEmail, setValidEmail] = React.useState(false);
 
   const onLoginButtonClick = () =>
     navigate(LinkedinAuthenticationRoutes.login);
 
   const onEmailInputChange = (event: any) => {
-    const emailRegex = new RegExp("/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/gi");
+    const emailRegex = /^\w+@[a-z]+(\.[a-z]+)+$/;
+    const email = event.target.value;
+    if(emailRegex.test(email)) setValidEmail(true);
   }; 
   const onPasswordInputChange = (event: any) => {
     const strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,16})");
@@ -27,7 +30,7 @@ export const Register: React.FC = () => {
       setNewPassword(event.target.value);
   };
   const onConfirmPasswordInputChange = (e: any) => {
-    if(e.target.value === newPassword)
+    if((e.target.value === newPassword) && (validEmail))
       setButton(false);
   };
  
@@ -43,6 +46,7 @@ export const Register: React.FC = () => {
               type="email" 
               className="inputs" 
               label="E-mail"
+              helperText={"Exemplo: mulhermaravilha@hotmail.com"}
               onChange={onEmailInputChange}
             />
             <TextField 

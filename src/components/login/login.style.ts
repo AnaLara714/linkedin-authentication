@@ -11,7 +11,7 @@ export const Main = styled("div")({
   minHeight: "100%",
   marginTop: "-15px",
   backgroundImage: `url(${imgBackground})`,
-  "@media (max-width: 450px)": {
+  "@media (max-width: 850px)": {
     marginTop: "-25px",
     background: "#FFFFFF",
   },
@@ -24,7 +24,7 @@ export const Main = styled("div")({
   },
   "& .halfDivider": {
     width: "40%",
-    "@media (max-width: 350px)": {
+    "@media (max-width: 850px)": {
       width: "45%",
     },
   },
@@ -37,7 +37,7 @@ export const BoxLogin = styled("div")({
   borderRadius: 8,
   boxShadow: "0 4px 12px rgb(0 0 0 / 15%)",
   backgroundColor: "#FFFFFF",
-  "@media (max-width: 450px)": {
+  "@media (max-width: 850px)": {
     boxShadow: "none",
     width: "80%",
     background: "#FFFFFF",
