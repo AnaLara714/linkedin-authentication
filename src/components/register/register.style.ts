@@ -37,7 +37,7 @@ export const Main = styled("div")({
   },
   "& .inputs": {
     marginBottom: 16,
-    width: "100%",
+    width: "100%", 
   },
   "& .halfDivider": {
     width: "50%",

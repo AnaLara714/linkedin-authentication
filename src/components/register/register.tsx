@@ -19,21 +19,27 @@ export const Register: React.FC = () => {
   const onEmailInputChange = (event: any) => {
     const emailRegex = /^\w+@[a-z]+(\.[a-z]+)+$/;
     const email = event.target.value;
-    if(emailRegex.test(email)) setValidEmail(true);
+    if(emailRegex.test(email))  {
+      setValidEmail(true);
+      console.log(validEmail);
+    };
   }; 
   const onPasswordInputChange = (event: any) => {
-    const strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,16})");
-    const sequenceLetters = new RegExp("/[A-Za-z]{2}/g");
-    const sequenceNumbers = new RegExp("/\d{2}/g");
+    const strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,16})/;
+    const sequenceLetters = /[A-Za-z]{2}/g;
+    const sequenceNumbers = /\d{2}/g;
     const password = event.target.value;
-    if(strongRegex.test(password) && !password.match(sequenceLetters) && !password.match(sequenceNumbers)) 
+    const classCerto = "inputs";
+    const classErrado = "inputInvald";
+     
+    if(strongRegex.test(password)  && !password.match(sequenceLetters) && !password.match(sequenceNumbers))
       setNewPassword(event.target.value);
-  };
+    };
   const onConfirmPasswordInputChange = (e: any) => {
     if((e.target.value === newPassword) && (validEmail))
-      setButton(false);
+    setButton(false);
   };
- 
+  
   return (
     <Main>
       <BoxLogin className="boxMainOut">
