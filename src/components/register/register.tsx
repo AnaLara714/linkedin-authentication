@@ -44,6 +44,9 @@ export const Register: React.FC = () => {
       setValidConfirmPassword(true);
     }
   };
+  const onRegisterButtonClick = () => {
+    alert("Cadastro feito com sucesso! Seja bem-vindo(a) ao LinkedI!:)");
+  };
   
   return (
     <Main>
@@ -96,6 +99,7 @@ export const Register: React.FC = () => {
             </div>
             <ButtonLogin
               disabled={button}
+              onClick={onRegisterButtonClick}
             >Aceitar e cadastre-se</ButtonLogin>
           </Form>
           <OtherOptions>
