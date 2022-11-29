@@ -11,14 +11,16 @@ export const Register: React.FC = () => {
   const navigate = useNavigate();
   const [button, setButton] = React.useState(true);
   const [newPassword, setNewPassword] = React.useState("");
-  const [validEmail, setValidEmail] = React.useState(false);
-
+  const [validEmail, setValidEmail] = React.useState(true);
+  const [validPassword, setValidPassword] = React.useState(true);
+  const [validConfirmPassword, setValidConfirmPassword] = React.useState(true);
   const onLoginButtonClick = () =>
     navigate(LinkedinAuthenticationRoutes.login);
 
   const onEmailInputChange = (event: any) => {
     const emailRegex = /^\w+@[a-z]+(\.[a-z]+)+$/;
     const email = event.target.value;
+    setValidEmail(false);
     if(emailRegex.test(email))  {
       setValidEmail(true);
       console.log(validEmail);
@@ -29,15 +31,18 @@ export const Register: React.FC = () => {
     const sequenceLetters = /[A-Za-z]{2}/g;
     const sequenceNumbers = /\d{2}/g;
     const password = event.target.value;
-    const classCerto = "inputs";
-    const classErrado = "inputInvald";
-     
-    if(strongRegex.test(password)  && !password.match(sequenceLetters) && !password.match(sequenceNumbers))
+    setValidPassword(false);
+    if(strongRegex.test(password)  && !password.match(sequenceLetters) && !password.match(sequenceNumbers)) {
       setNewPassword(event.target.value);
-    };
+      setValidPassword(true);
+    }
+  };
   const onConfirmPasswordInputChange = (e: any) => {
-    if((e.target.value === newPassword) && (validEmail))
-    setButton(false);
+    setValidConfirmPassword(false);
+    if((e.target.value === newPassword) && (validEmail)) {
+      setButton(false);
+      setValidConfirmPassword(true);
+    }
   };
   
   return (
@@ -49,30 +54,32 @@ export const Register: React.FC = () => {
             <TextField 
               required={true} 
               type="email" 
-              className="inputs" 
-              label="E-mail"
-              helperText={"Exemplo: mulhermaravilha@hotmail.com"}
+              className={validEmail ? "inputsValid" : "inputsInvalid"}  
+              label={validEmail ? "E-mail" : ""}
+              helperText={!validEmail ? "Insira um e-mail válido." : ""}
               onChange={onEmailInputChange}
             />
             <TextField 
               required={true}
-              className="inputs" 
+              className={"inputsValid"}  
               label="Nome"
             />
             <TextField
               required={true}
               type="password" 
-              className="inputs" 
-              label="Senha"
-              helperText={"A senha, de no mínimo 8 caracteres e no máximo 16, deve conter números ao menos um caracter especial, letras maiúsculas, minúsculas e números. Não pode ter letras ou números em sequência. "}
+              className={validPassword ? "inputsValid" : "inputsInvalid"} 
+              label={validPassword ? "Senha" : ""}
+              helperText={!validPassword ? "A senha, de no mínimo 8 caracteres e no máximo 16, deve conter números ao menos um caracter especial, letras maiúsculas, minúsculas e números. Não pode ter letras ou números em sequência. " : ""}
               inputProps={{maxlength:16}}
               onChange={onPasswordInputChange}
-            />
+              />
             <TextField 
               required={true}
               type="password" 
-              className="inputs" 
-              label="Confirmar senha"
+              label={validConfirmPassword ? "Confirmar senha" : ""}  
+              helperText={!validConfirmPassword ? "Confirme sua senha" : ""}  
+              className={validConfirmPassword ? "inputsValid" : "inputsInvalid"} 
+              inputProps={{maxlength:16}}
               onChange={onConfirmPasswordInputChange}
             />
             <div className="terms"> 

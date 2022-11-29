@@ -35,9 +35,26 @@ export const Main = styled("div")({
   "& .boxMainInside": {
     width: "100%",
   },
-  "& .inputs": {
+  "& .inputsValid": {
     marginBottom: 16,
     width: "100%", 
+    "& input": {
+      height: 25,
+      padding: 15,
+    },
+  },
+  "& .inputsInvalid": {
+    marginBottom: 16,
+    width: "100%",
+    "& input":  {
+      height: 56,
+      border: "3px solid red",
+      boxSizing: "border-box",
+      borderRadius: 6, 
+    },
+    "& p": {
+      color: "red",
+    },
   },
   "& .halfDivider": {
     width: "50%",
